@@ -14,6 +14,7 @@ const Header = () => {
             src="https://www.mercurynews.com/wp-content/uploads/2017/03/airbnb_horizontal_lockup_web1.jpg"
             layout="fill"
             objectFit="cover"
+            alt="Logo Image"
           />
         </div>
 
