@@ -1,0 +1,34 @@
+.mediumcard {
+  text-align: center;
+  transition: transform 0.2s linear;
+
+  &:hover {
+    transform: translateY(-10px);
+    transition: transform 0.2s linear;
+
+    > .mediumcard__img {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+      transition: box-shadow 0.2s linear;
+    }
+    > h4 {
+      color: #333;
+    }
+  }
+  &__img {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    cursor: pointer;
+    transition: box-shadow 0.2s linear;
+  }
+  & > h4 {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #111;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+}

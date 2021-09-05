@@ -1,0 +1,62 @@
+@use '../abtstracts/mixins';
+@use '../abtstracts/vars';
+.banner {
+  width: 100%;
+  min-height: 70vh;
+  background-image: url("https://images.unsplash.com/photo-1579762593175-20226054cad0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1407&q=80");
+  @include mixins.bgImage;
+  display: grid;
+  place-items: center;
+  background-color: rgba(#000, 0.5);
+  background-blend-mode: overlay;
+
+  @include mixins.mq(768px) {
+    & {
+      min-height: 40vh;
+    }
+  }
+
+  &__container {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    @include mixins.mq(768px) {
+      & {
+        padding: 0 14px;
+      }
+    }
+
+    & > h2 {
+      color: white;
+      font-size: 2rem;
+      text-transform: capitalize;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      font-weight: 600;
+
+      @include mixins.mq(768px) {
+        & {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    & > button {
+      padding: 12px 20px;
+      background-color: white;
+      color: #111;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      transition: box-shadow 400ms ease-in-out, transform 400ms ease-in-out;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transform: scale(1.05);
+        transition: box-shadow 400ms ease-in-out, transform 400ms ease-in-out;
+      }
+    }
+  }
+}

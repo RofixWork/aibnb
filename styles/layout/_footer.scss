@@ -1,0 +1,24 @@
+footer {
+  padding: 60px 0;
+  background-color: #f6f6f6;
+
+  .footer__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    row-gap: 20px;
+
+    &__item {
+      > h5 {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      > p {
+        font-size: 15px;
+
+        &:not(:last-of-type) {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
