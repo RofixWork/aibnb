@@ -1,0 +1,75 @@
+@use '../abtstracts/mixins';
+@use '../abtstracts/vars';
+.infocard__box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  padding: 10px 15px;
+  gap: 14px;
+  border: 0.5px solid #ccc;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+
+  &__img {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  &__info {
+    @include mixins.flex(space-between, none, column);
+    &__box1 {
+      > h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 3px 0 5px 0;
+      }
+
+      > p,
+      h5 {
+        color: gray;
+        font-weight: 400;
+        font-size: 13px;
+      }
+    }
+    &__box2 {
+      @include mixins.flex(space-between, center, row);
+
+      .star {
+        @include mixins.flex(none, center, row);
+        gap: 4px;
+        > h5 {
+          font-size: 0.8rem;
+          font-weight: 400;
+        }
+        .icon__star {
+          color: vars.$mainColor;
+          font-size: 20px;
+        }
+      }
+      .price {
+        text-transform: capitalize;
+        > h3 {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        > h4 {
+          font-size: 13px;
+          font-weight: 400;
+          text-align: end;
+        }
+      }
+    }
+  }
+  .icon__heart {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
